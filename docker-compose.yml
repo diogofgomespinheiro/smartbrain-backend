@@ -6,5 +6,17 @@ services:
     build: ./
     command: npm start
     working_dir: /usr/src/smartbrain-backend
+    environment: 
+      POSTGRES_URI: postgres://postgres:postgres123@postgres:5432/smartbrain
     ports: 
       - "5000:5000"
+
+  postgres:
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: smartbrain
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports: 
+      - "5432:5432"

@@ -18,6 +18,7 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
             })
             .catch(err => res.status(400).json("Unable to get user"));
         } else {
+          console.log("password")
           res.status(400).json("Wrong password");
         }
       });
